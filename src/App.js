@@ -6,6 +6,7 @@ import Home from './components/pages/Home'
 import Contact from './components/pages/Contact'
 import Services from './components/pages/Services'
 import Header from './components/partials/Header'
+import Service from './components/pages/Service'
 
 class App extends Component {
   render() {
@@ -23,6 +24,7 @@ class App extends Component {
           <Route exact path="/" component={Home} />
           <Route path="/contact" component={Contact} />
           <Route path="/services" render={() => <Services services={services} />} />
+          <Route path="/services/:id" render={(props) => <Service {...props} />} />
         </main>
       </Router>
     )

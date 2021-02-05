@@ -5,6 +5,7 @@ class Services extends Component {
     let serviceList = this.props.services.map((service, i) => (
       <li key={`service-${i}`}>{service}</li>
     ))
+    console.log(this.props)
 
     return (
       <div>
