@@ -9,13 +9,20 @@ import Header from './components/partials/Header'
 
 class App extends Component {
   render() {
+    let services = [
+      "Deep Cleaning",
+      "Filling",
+      "Gum Massage",
+      "Root Canal",
+      "Oral Mud Bath"
+    ]
     return (
       <Router>
         <Header />
         <main className="App">
           <Route exact path="/" component={Home} />
           <Route path="/contact" component={Contact} />
-          <Route path="/services" component={Services} />
+          <Route path="/services" render={() => <Services services={services} />} />
         </main>
       </Router>
     )
