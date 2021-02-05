@@ -18,7 +18,13 @@ class App extends Component {
           <Route exact path="/" component={Home} />
           <Route path="/contact" component={Contact} />
           <Route path="/services" render={() => <Services services={serviceDetails} />} />
-          <Route path="/services/:id" render={(props) => <Service {...props} />} />
+          <Route 
+            path="/services/:id" 
+            render={(props) => {
+              let service = serviceDetails.find(({ id }) => id.toString() === props.match.params.id)
+              props = {...service, ...props}
+              return <Service {...props} />
+            }} />
         </main>
       </Router>
     )
